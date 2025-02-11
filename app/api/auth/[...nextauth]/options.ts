@@ -16,7 +16,6 @@ export const authOptions: AuthOptions = {
         },
       },
       authorize(credentials, req) {
-        console.log(credentials,req);
         return null;
       },
     }),
