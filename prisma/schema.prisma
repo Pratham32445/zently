@@ -14,19 +14,8 @@ datasource db {
 }
 
 model User {
-  Id        String   @id @default(uuid())
-  userName  String   @unique
-  email     String   @unique
-  password  String
-  createdAt DateTime @default(now())
-  slots     Slot[]
-}
-
-model Slot {
-  Id        String   @id @default(uuid())
-  startTime DateTime
-  endTime   DateTime
-  date      DateTime
-  userId    String
-  user      User     @relation(fields: [userId], references: [Id])
+  Id       String @id @default(uuid())
+  userName String @unique
+  email    String @unique
+  password String
 }
