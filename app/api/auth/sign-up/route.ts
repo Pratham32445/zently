@@ -9,7 +9,13 @@ export const POST = async (req: NextRequest) => {
     const parsedBody = signUpSchema.safeParse(body);
     if (!parsedBody.success)
       return NextResponse.json(
-        { type: "show-error", errors: parsedBody.error },
+        {
+          type: "show-error",
+          errors: parsedBody.error.issues.reduce((acc, error) => {
+            acc[error.path[0]] = error.message;
+            return acc;
+          }, {} as Record<string, string>),
+        },
         { status: 401 }
       );
     const user = await client.user.findFirst({

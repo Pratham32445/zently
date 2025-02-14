@@ -14,8 +14,9 @@ datasource db {
 }
 
 model User {
-  Id       String @id @default(uuid())
-  userName String @unique
-  email    String @unique
-  password String
+  Id         String  @id @default(uuid())
+  userName   String  @unique
+  email      String  @unique
+  password   String
+  isVerified Boolean @default(false)
 }
