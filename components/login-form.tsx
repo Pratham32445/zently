@@ -57,7 +57,6 @@ export function LoginForm({
                   id="email"
                   type="email"
                   placeholder="m@example.com"
-                  required
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
@@ -75,7 +74,6 @@ export function LoginForm({
                   onChange={(e) => setPassword(e.target.value)}
                   id="password"
                   type="password"
-                  required
                 />
               </div>
               <Button type="submit" className="w-full">

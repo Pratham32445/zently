@@ -98,7 +98,6 @@ export function SignUpForm({
                   placeholder="m@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  required
                 />
                 <span className="text-xs text-red-600">{errorInfo.email}</span>
               </div>
@@ -110,7 +109,6 @@ export function SignUpForm({
                   placeholder="Enter your UserName"
                   value={formData.userName}
                   onChange={handleChange}
-                  required
                 />
                 <span className="text-xs text-red-600">
                   {errorInfo.userName}
@@ -124,10 +122,11 @@ export function SignUpForm({
                   placeholder="Enter your Password"
                   value={formData.password}
                   onChange={handleChange}
-                  required
                 />
+                <span className="text-xs text-red-600">
+                  {errorInfo.password}
+                </span>
               </div>
-              <span className="text-xs text-red-600">{errorInfo.password}</span>
               <Button type="submit" className="w-full">
                 Sign Up
               </Button>
